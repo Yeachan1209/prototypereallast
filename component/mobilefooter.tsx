@@ -1,5 +1,5 @@
 import { FaHome, FaSearch, FaMap, FaEnvelope, FaUser } from "react-icons/fa";
-import { Box, Flex, IconButton, Text, useColorMode } from "@chakra-ui/react";
+import { Flex, IconButton, useColorMode } from "@chakra-ui/react";
 import styled from "@emotion/styled";
 import Link from "next/link";
 

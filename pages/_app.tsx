@@ -6,15 +6,6 @@ import { QueryClient, QueryClientProvider } from "react-query";
 import dynamic from "next/dynamic";
 import React from "react";
 import Header from "../component/Header";
-import ASidebar from "../component/Aside";
-
-const theme = extendTheme({
-  breakpoints: {
-    md: "768px",
-    lg: "960px",
-    xl: "1200px",
-  },
-});
 
 const DynamicBrowserRouter = dynamic(
   () => import("react-router-dom").then((mod) => mod.BrowserRouter),
@@ -24,26 +15,9 @@ const DynamicBrowserRouter = dynamic(
 );
 
 function MyApp({ Component, pageProps }) {
-  const [isLargerThanMd, setIsLargerThanMd] = useState(false);
   const [colorMode, setColorMode] = useState<"light" | "dark">("light");
   const router = useRouter();
   const queryClient = new QueryClient();
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      setIsLargerThanMd(window.innerWidth >= parseInt(theme.breakpoints.md));
-
-      const handleResize = () => {
-        setIsLargerThanMd(window.innerWidth >= parseInt(theme.breakpoints.md));
-      };
-
-      window.addEventListener("resize", handleResize);
-
-      return () => {
-        window.removeEventListener("resize", handleResize);
-      };
-    }
-  }, [theme.breakpoints.md]);
 
   useEffect(() => {
     if (typeof window !== "undefined") {

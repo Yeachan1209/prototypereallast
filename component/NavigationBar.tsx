@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Box, Text, Grid, useColorMode, Flex } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import styled from "@emotion/styled";

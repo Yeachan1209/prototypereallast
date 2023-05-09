@@ -72,9 +72,7 @@ const LoginSignupButton = styled(HStack)`
   width: 100%;
 `;
 
-const Notaccount = styled(Text)`
-  font-weight: bold;
-`;
+const Notaccount = styled(Text)``;
 
 const LoginorSignup = styled.a`
   font-weight: bold;
@@ -172,18 +170,21 @@ export default function Login() {
                 placeholder="이름"
                 value={name}
                 onChange={handleNameChange}
+                _placeholder={{ color: "gray.500" }}
               />
             )}
             <SignNameEmailPass
               placeholder="이메일"
               value={email}
               onChange={handleEmailChange}
+              _placeholder={{ color: "gray.500" }}
             />
             <SignNameEmailPass
               placeholder="비밀번호"
               type="password"
               value={password}
               onChange={handlePasswordChange}
+              _placeholder={{ color: "gray.500" }}
             />
             {error && <ErrorMessage>{error}</ErrorMessage>}
             {isSignup ? (
@@ -197,7 +198,7 @@ export default function Login() {
               </GoogleLogin>
             </Link>
             <LoginSignupButton>
-              <Notaccount>계정이 없으신가요?</Notaccount>
+              <Notaccount fontWeight="bold">계정이 없으신가요?</Notaccount>
               <Link href="/" passHref>
                 <LoginorSignup onClick={() => setIsSignup(!isSignup)}>
                   {isSignup ? "로그인" : "회원가입"}

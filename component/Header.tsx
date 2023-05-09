@@ -21,13 +21,11 @@ const Header = () => {
   const username = "Yea Chan";
   const [showNotification, setShowNotification] = useState(false);
   const backgroundColor = colorMode === "light" ? "white" : "gray.800";
-  const textColor = colorMode === "light" ? "black" : "white";
 
   const handleNotificationClick = () => {
     setShowNotification(!showNotification);
   };
 
-  //PC
   const HeaderStyles = styled(Flex)``;
   const LocationButton = styled(Button)``;
   const SearchBox = styled(Box)``;

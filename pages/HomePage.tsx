@@ -1,19 +1,8 @@
-import { useState, useEffect } from "react";
 import { Box } from "@chakra-ui/react";
 import Layout from "../component/Layout";
 import Section from "../component/Section";
 
 function HomePage() {
-  const [windowWidth, setWindowWidth] = useState(0);
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      setWindowWidth(window.innerWidth);
-      const handleResize = () => setWindowWidth(window.innerWidth);
-      window.addEventListener("resize", handleResize);
-      return () => window.removeEventListener("resize", handleResize);
-    }
-  }, []);
-
   return (
     <Box maxWidth="1150px" mx="auto">
       <Layout>

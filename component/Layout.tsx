@@ -1,7 +1,6 @@
 import { ReactNode, useEffect, useState } from "react";
-import Navigationbar from "./NavigationBar";
 import MobileFooter from "./mobilefooter";
-import { Box, Grid, GridItem } from "@chakra-ui/react";
+import { Grid, GridItem } from "@chakra-ui/react";
 import NavigationBar from "./NavigationBar";
 import Aside from "./Aside";
 
@@ -10,12 +9,6 @@ type LayoutProps = {
 };
 
 const Layout = ({ children }: LayoutProps) => {
-  const [isBrowser, setIsBrowser] = useState(false);
-
-  useEffect(() => {
-    setIsBrowser(true);
-  }, []);
-
   const [windowWidth, setWindowWidth] = useState(0);
   useEffect(() => {
     const handleResize = () => setWindowWidth(window.innerWidth);
@@ -27,7 +20,6 @@ const Layout = ({ children }: LayoutProps) => {
   }, [setWindowWidth]);
 
   const isMobile = windowWidth < 768;
-  const isPC = windowWidth > 768;
   return (
     <>
       <Grid templateColumns={{ base: "none", md: "220px 1fr" }} gap={6}>
